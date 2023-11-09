@@ -1,25 +1,39 @@
-import logo from './logo.svg';
-import './App.css';
+import Button from './components/Button'
+import { GoAlert } from 'react-icons/go'
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+	return (
+		<div>
+			<div>
+				<Button>Plain</Button>
+			</div>
+			<div>
+				<Button primary outline rounded>
+					Primary
+				</Button>
+			</div>
+			<div>
+				<Button outline secondary rounded>
+					Secondary
+				</Button>
+			</div>
+			<div>
+				<Button success outline rounded>
+					Success
+				</Button>
+			</div>
+			<div>
+				<Button warning outline rounded>
+					<GoAlert />
+					warning
+				</Button>
+			</div>
+			<div>
+				<Button danger outline rounded>
+					! Danger
+				</Button>
+			</div>
+		</div>
+	)
 }
-
-export default App;
+export default App
