@@ -1,38 +1,33 @@
-import Button from './components/Button'
-import { GoAlert } from 'react-icons/go'
+//import ButtonPage from './pages/ButtonPage'
+import Accordion from './components/Accordion'
 
 function App() {
+	const items = [
+		{
+			id: 'dhsakf',
+			label: 'Is this goint to work?',
+			content:
+				'The purpose of lorem ipsum is to create a natural looking block of text (sentence, paragraph, page, etc.) that doesn`t distract from the layout. A practice not without controversy, laying out pages with meaningless filler text can be very useful when the focus is meant to be on design, not content.',
+		},
+		{
+			id: 'sdhfss',
+			label: 'What is Lorem Ipsum?',
+			content:
+				'Lorem ipsum, or lipsum as it is sometimes known, is dummy text used in laying out print, graphic or web designs. The passage is attributed to an unknown typesetter in the 15th century who is thought to have scrambled parts of Cicero`s De Finibus Bonorum et Malorum for use in a type specimen book. It usually begins with:Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
+		},
+		{
+			id: 'sdhfyy',
+			label: 'Lorem Ipsum? write down here:',
+			content:
+				'Lorem ipsum, or lipsum as it is sometimes known, is dummy text used in laying out print, graphic or web designs. The passage is attributed to an unknown typesetter in the 15th century who is thought to have scrambled parts of Cicero`s De Finibus Bonorum et Malorum for use in a type specimen book. It usually begins with:Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
+		},
+	]
 	return (
 		<div>
 			<div>
-				<Button>Plain</Button>
+				<Accordion items={items} />
 			</div>
-			<div>
-				<Button primary outline rounded>
-					Primary
-				</Button>
-			</div>
-			<div>
-				<Button outline secondary rounded>
-					Secondary
-				</Button>
-			</div>
-			<div>
-				<Button success outline rounded>
-					Success
-				</Button>
-			</div>
-			<div>
-				<Button warning outline rounded>
-					<GoAlert />
-					warning
-				</Button>
-			</div>
-			<div>
-				<Button danger outline rounded>
-					! Danger
-				</Button>
-			</div>
+			{/* <ButtonPage /> */}
 		</div>
 	)
 }
