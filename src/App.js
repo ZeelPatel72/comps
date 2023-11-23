@@ -1,31 +1,27 @@
-//import ButtonPage from './pages/ButtonPage'
-import Accordion from './components/Accordion'
+import ButtonPage from './pages/ButtonPage'
+import AccordionPage from './pages/AccordionPage'
+import { useState } from 'react'
+import Dropdown from './components/Dropdown'
 
 function App() {
-	const items = [
-		{
-			id: 'dhsakf',
-			label: 'Is this goint to work?',
-			content:
-				'The purpose of lorem ipsum is to create a natural looking block of text (sentence, paragraph, page, etc.) that doesn`t distract from the layout. A practice not without controversy, laying out pages with meaningless filler text can be very useful when the focus is meant to be on design, not content.',
-		},
-		{
-			id: 'sdhfss',
-			label: 'What is Lorem Ipsum?',
-			content:
-				'Lorem ipsum, or lipsum as it is sometimes known, is dummy text used in laying out print, graphic or web designs. The passage is attributed to an unknown typesetter in the 15th century who is thought to have scrambled parts of Cicero`s De Finibus Bonorum et Malorum for use in a type specimen book. It usually begins with:Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
-		},
-		{
-			id: 'sdhfyy',
-			label: 'Lorem Ipsum? write down here:',
-			content:
-				'Lorem ipsum, or lipsum as it is sometimes known, is dummy text used in laying out print, graphic or web designs. The passage is attributed to an unknown typesetter in the 15th century who is thought to have scrambled parts of Cicero`s De Finibus Bonorum et Malorum for use in a type specimen book. It usually begins with:Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
-		},
+	const [selection, setSelection] = useState(null)
+	const handleSelect = (option) => {
+		setSelection(option)
+	}
+	const options = [
+		{ label: 'Red', value: 'Red' },
+		{ label: 'Green', value: 'Green' },
+		{ label: 'Blue', value: 'Blue' },
 	]
 	return (
-		<div>
+		<div className="flex">
 			<div>
-				<Accordion items={items} />
+				<Dropdown value={selection} onChange={handleSelect} options={options} />
+				{/* <AccordionPage /> */}
+			</div>
+			<div>
+				<Dropdown value={selection} onChange={handleSelect} options={options} />
+				{/* <AccordionPage /> */}
 			</div>
 			{/* <ButtonPage /> */}
 		</div>

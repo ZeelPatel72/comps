@@ -12,25 +12,19 @@ function ButtonPage() {
 				</Button>
 			</div>
 			<div>
-				<Button outline secondary rounded>
-					Secondary
-				</Button>
+				<Button secondary>Secondary</Button>
 			</div>
 			<div>
-				<Button success outline rounded>
-					Success
-				</Button>
+				<Button success>Success</Button>
 			</div>
 			<div>
-				<Button warning outline rounded>
+				<Button warning>
 					<GoAlert />
 					warning
 				</Button>
 			</div>
 			<div>
-				<Button danger outline rounded>
-					! Danger
-				</Button>
+				<Button danger>! Danger</Button>
 			</div>
 		</div>
 	)
