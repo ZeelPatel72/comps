@@ -1,29 +1,35 @@
 import ButtonPage from './pages/ButtonPage'
 import AccordionPage from './pages/AccordionPage'
-import { useState } from 'react'
-import Dropdown from './components/Dropdown'
+import Route from './components/Route'
+import DropdownPage from './pages/DropdownPage'
+import Sidebar from './components/Sidebar'
+import Link from './components/Link'
+import ModalPage from './pages/ModalPage'
+import TablePage from './pages/TablePage'
 
 function App() {
-	const [selection, setSelection] = useState(null)
-	const handleSelect = (option) => {
-		setSelection(option)
-	}
-	const options = [
-		{ label: 'Red', value: 'Red' },
-		{ label: 'Green', value: 'Green' },
-		{ label: 'Blue', value: 'Blue' },
-	]
 	return (
-		<div className="flex">
-			<div>
-				<Dropdown value={selection} onChange={handleSelect} options={options} />
-				{/* <AccordionPage /> */}
+		<div className="flex flex-row gap-x-8 mt-4">
+			<div className="">
+				<Sidebar />
 			</div>
-			<div>
-				<Dropdown value={selection} onChange={handleSelect} options={options} />
-				{/* <AccordionPage /> */}
+			<div className="grow pr-4">
+				<Route path="/accordion">
+					<AccordionPage />
+				</Route>
+				<Route path="/">
+					<DropdownPage />
+				</Route>
+				<Route path="/buttons">
+					<ButtonPage />
+				</Route>
+				<Route path="/modal">
+					<ModalPage />
+				</Route>
+				<Route path="/tables">
+					<TablePage />
+				</Route>
 			</div>
-			{/* <ButtonPage /> */}
 		</div>
 	)
 }
